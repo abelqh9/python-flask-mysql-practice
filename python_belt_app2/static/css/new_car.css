@@ -1,0 +1,96 @@
+h1, h2, p{
+    margin: 0;
+}
+
+
+*{
+    box-sizing: border-box;
+}
+
+
+body{
+    margin: 0;
+    min-height: 100vh;
+    padding: 2.5rem 5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(22, 22, 22);
+    color: white;
+}
+
+
+header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    height: 9.5vh;
+}
+header h2{
+    font-size: 2.25rem;
+}
+header div{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.principal_title{
+    font-size: 2.85rem;
+    color: gold;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+form label, form input{
+    font-size: 1.5rem;
+}
+form label{
+    margin-bottom: 0.5rem;
+}
+main form input{
+    margin-bottom: 0.5rem;
+}
+
+main form input[type="submit"]{
+    margin-top: 1.25rem;
+    width: 7.5rem;
+}
+
+footer{
+    text-align: end;
+}
+
+.classicBtn{
+    cursor: pointer;
+    border: none;
+    padding: 0.35rem 0.75rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: white;
+    background-color: rgb(37, 37, 255);
+    box-shadow: 3px 4px 0 0 black;
+    width: initial;
+    text-decoration: none;
+}
+.classicBtn:hover{
+    color: initial;
+}
+.errors_container{
+    max-width: 20rem;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    background-color: rgb(255, 118, 118);
+    color: rgb(255, 0, 43);
+    padding: 1rem;
+    font-weight: 600;
+    margin: 1rem 0;
+    align-self: center;
+    font-size: 0.85rem;
+    list-style: none;
+}

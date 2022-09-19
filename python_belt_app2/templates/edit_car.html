@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/edit_car.css') }}">
+    <title>Edit {{car.title}}</title>
+</head>
+<body>
+    <header>
+        <h2 class="principal_title">Edit {{car.model}}</h2>
+        <div>
+            <a class="classicBtn" href="/dashboard">Dashboard</a>
+            <a class="classicBtn" href={{"/users/" + user.id|string}}>Purchases</a>
+            <form action="/logout" method="post"><input class="classicBtn" type="submit" value="Logout"></form>
+        </div>
+    </header>
+    <main>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="errors_container">
+                    {% for message in messages %}
+                        <p>- {{message}}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+        <form action="/edit/process" method="post">
+            <input type="hidden" name="car_id" value={{car.id}}>
+
+            <label for="price">Price:</label>
+            <input type="number" name="price" min="0" id="price" value="{{car.price}}">
+
+            <label for="model">Model:</label>
+            <input type="text" name="model" id="model" value="{{car.model}}">
+            
+            <label for="make">Make:</label>
+            <input type="text" name="make" id="make" value="{{car.make}}">
+
+            <label for="year">Year:</label>
+            <input type="number" name="year" min="0" id="year" value="{{(car.year).year}}">
+
+            <label for="description">Description:</label>
+            <textarea name="description" id="description" cols="60" rows="4">{{car.description}}</textarea>
+
+            <input class="classicBtn" type="submit" value="Update">
+        </form>
+    </main>
+</body>
+</html>
